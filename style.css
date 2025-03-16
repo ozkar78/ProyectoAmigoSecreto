@@ -1,0 +1,339 @@
+/* ================================
+   Definición de colores principales para el diseño
+==================================== */
+
+:root {
+    --color-primary: #3544ab; /* Color principal (azul) */
+    --color-secondary: #fff2d9; /* Color secundario (amarillo claro) */
+    --color-tertiary: #ff9f68; /* Color terciario (naranja claro) */
+    --color-button: #ff5f57; /* Color para botones (rojo) */
+    --color-button-hover: #d84e47; /* Color de botón al pasar el ratón (rojo más oscuro) */
+    --color-text: #333333; /* Color de texto principal */
+    --color-white: #ffffff; /* Color blanco */
+}
+
+/* ================================
+   Importación de fuentes desde Google Fonts
+==================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+/* ================================
+   Resetear márgenes y rellenos
+==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Estilo básico para el cuerpo de la página
+==================================== */
+.body {
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    background-color: var(--color-primary); /* Fondo azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca los elementos en una columna */
+}
+
+/* ================================
+   Contenedor principal para todo el contenido
+==================================== */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* ================================
+   Estilo del banner o encabezado en la parte superior
+==================================== */
+.header-banner {  
+    flex: 40%; /* Ocupa el 40% de la altura disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
+}
+
+/* ================================
+   Estilo de la sección de entrada donde el usuario interactúa
+==================================== */
+.input-section {
+    flex: 60%; /* Ocupa el 60% de la altura disponible */
+    background-color: var(--color-secondary); /* Fondo amarillo */
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 64px 64px 0 0; /* Bordes redondeados arriba */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* ================================
+   Estilo del título principal
+==================================== */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-primary);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title::before {
+    content: "🎉 "; /* Agrega un icono antes del texto */
+}
+
+/* Agregar el mismo ícono después del texto */
+.main-title::after {
+    content: " 🎉"; /* Agrega el mismo icono después del texto */
+}
+
+/* ================================
+   Estilo del título de sección
+==================================== */
+.section-title {
+    font-family: "Baloo Tamma 2", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ff6f61; /* Color naranja */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    animation: bounce 1s infinite alternate; /* Animación de rebote */
+}
+
+/* ================================
+   Animación de rebote
+==================================== */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ================================
+   Estilo del contenedor de entrada (input o celda de ingreso de nombres)
+==================================== */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+    margin-top: 40px;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--color-white); /* Fondo blanco */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: box-shadow 0.3s ease; /* Transición suave en el hover */
+}
+
+.input-wrapper:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Sombra más grande en hover */
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    transition: border 0.3s ease; /* Transición suave en el borde */
+}
+
+.input-wrapper input:focus {
+    border-color: var(--color-primary); /* Borde azul cuando está en foco */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave en foco */
+}
+
+
+/* ================================
+   Estilo Frase del resultado sorteo
+==================================== */
+#resultado{
+    font-size: 24px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    color: #3544ab;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ================================
+   Estilo de la matriz de nombres
+==================================== */
+.name-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(3, 1fr); /* 3 filas */
+    gap: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* ================================
+   Estilo para cada nombre en la cuadrícula
+==================================== */
+.name-item {
+    display: flex;
+    justify-content: space-between; /* Separa el nombre y el botón */
+    align-items: center;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    font-family: 'Baloo Tamma 2', sans-serif;
+    font-size: 14px;
+    color: var(--color-text);
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.name-item:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   Estilo del placeholder dentro del campo de entrada
+==================================== */
+.input-name::placeholder {
+    color: var(--color-primary);
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Baloo Tamma 2', sans-serif;
+}
+
+/* ================================
+   Contenedor para los botones de acción
+==================================== */
+.button-container {
+    width: 300px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ================================
+   Estilo para los botones (sortear, reiniciar, etc.)
+==================================== */
+button {
+    background-color: var(--color-primary); /* Color del botón */
+    padding: 4px 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.2;
+    color: var(--color-white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+     /* Cambio destacado en rojo */
+     transform: scale(1.30); /* Aumenta el tamaño del botón en un 5% */
+}
+
+/* ================================
+   Estilos de botones adicionales (añadir, eliminar, sortear)
+==================================== */
+
+/* Botón de añadir */
+.button-add {
+    background-color: #4CAF50; /* Verde */
+}
+
+/* Botón de eliminar */
+.btn-eliminar {
+    background-color: var(--color-secondary); /* Rojo */
+    font-size: 10px;
+}
+
+/* Botón de sortear */
+.button-draw {
+    background-color: var(--color-button);
+}
+
+/* ================================
+   Estilos para el pie de página
+==================================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+footer {
+    background-color: var(--color-primary); /* Fondo azul */
+    color: var(--color-white); /* Color blanco */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-text {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-link {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-tertiary);
+}

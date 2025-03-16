@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <!-- 1. Definición de los metadatos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 2. Enlace a la hoja de estilo externa -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 3. Enlace a las fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- 4. Título de la página -->
+    <title>Amigo Secreto</title>
+</head>
+
+<body>
+    <!-- 5. Contenedor principal de la aplicación -->
+    <main class="main-content">
+        <!-- 6. Sección de encabezado -->
+        <header class="header-banner">
+            <!-- Título principal -->
+            <h1 class="main-title">Amigo Secreto</h1>
+            <!-- Imagen representativa -->
+            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
+        </header>
+
+        <!-- 7. Sección de ingreso de nombres -->
+        <section class="input-section">
+            <!-- Título de la sección -->
+            <h2 class="section-title"> ¡Digite el nombre de sus amigos!</h2>
+            
+            <!-- 8. Contenedor para el campo de texto y botón de agregar -->
+            <div class="input-wrapper">
+                <!-- Campo de texto para ingresar el nombre -->
+                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
+
+                <!-- Botón para agregar el amigo a la lista -->
+                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
+            </div>
+
+            <!-- 9. Grid donde se mostrarán los nombres ingresados -->
+            <div class="name-grid" id="name-grid"></div>
+
+            <!-- 10. Lista que mostrará los amigos -->
+            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+
+            <!-- 11. Lista donde se mostrará el resultado del sorteo -->
+            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+
+            <!-- 12. Contenedor de botones de acción -->
+            <div class="button-container">
+                <!-- Botón para realizar el sorteo del amigo secreto -->
+                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+                    Sortear amigo
+                </button>
+
+                <!-- Botón para limpiar la lista y reiniciar el juego -->
+                <button id="btnLimpiar" class="button-reset" onclick="limpiarLista()" aria-label="Reiniciar lista">
+                    <img src="assets/reinicio.png" alt="Ícono para limpiar">
+                    Reiniciar juego
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 13. Enlace al archivo JavaScript para la lógica del juego -->
+    <script src="app.js" defer></script>
+</body>
+
+<!-- 14. Sección de pie de página -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Texto de derechos reservados -->
+        <p class="footer-text">© 2025 Oracle Alura/ Diseñado: Oscar Valenzuela Todos los derechos reservados.</p>
+
+        <!-- Enlaces de pie de página -->
+        <div class="footer-links">
+            <a href="#" class="footer-link">Política de Privacidad</a>
+            <a href="#" class="footer-link">Términos y Condiciones</a>
+        </div>
+    </div>
+</footer>
+
+</html>
